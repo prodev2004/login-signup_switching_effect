@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login and Signup Switch Effect</title>
+</head>
+<body>
+    <div class="container">
+        <form class="hide">
+            <legend>Login</legend>
+            <input type="email" placeholder="Email..." required>
+            <input type="password" placeholder="Password..." required>
+            <button type="button">Login</button>
+            <p>Create an Account.</p>
+        </form>
+        <form class="show">
+            <legend>Signup</legend>
+            <input type="text" placeholder="Full Name..." required>
+            <input type="email" placeholder="Email..." required>
+            <input type="password" placeholder="Password..." required>
+            <input type="password" placeholder="Confirm Password..." required>
+            <button type="button">Signup</button>
+            <p>Already Have an Account.</p>
+        </form>
+    </div>
+
+    <script>
+        const form_one = document.querySelector('form:nth-of-type(1)');
+        const form_two = document.querySelector('form:nth-of-type(2)');
+
+        const create_acc = document.querySelector('form:nth-of-type(1) p');
+        const have_acc = document.querySelector('form:nth-of-type(2) p');
+
+        create_acc.addEventListener('click', () => {
+            form_one.classList.add('hide');
+            form_two.classList.remove('hide');
+
+            form_one.classList.remove('show');
+            form_two.classList.add('show');
+        })
+        have_acc.addEventListener('click', () => {
+            form_one.classList.remove('hide');
+            form_two.classList.add('hide');
+
+            form_one.classList.add('show');
+            form_two.classList.remove('show');
+        })
+    </script>
+</body>
+</html>
